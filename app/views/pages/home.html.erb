@@ -1,16 +1,16 @@
 <div class="home-callout text-center container-fluid">
-  <h1>Welcome to DevMatch</h1>
-  <h3>A membership site where entrepreneurs can meet developers.</h3>
+  <h1>Welkom bij Binkings</h1>
+  <h3>Een fictieve community website, gemaakt om een beetje te oefenen </h3>
 </div>
 <div class="container home-signup-links">
   <div class="row">
     <% if user_signed_in? %>
       <div class="col-md-6">
         <div class="well">
-          <h2 class="text-center">Your Profile</h2>
+          <h2 class="text-center">Jouw profiel</h2>
           <% if current_user.profile %>
-            <%= link_to "Edit your profile", edit_user_profile_path(user_id: current_user.id), class: 'btn btn-default btn-lg btn-block' %>
-            <%= link_to "View your profile", user_path(current_user.id), class: 'btn btn-default btn-lg btn-block' %>
+            <%= link_to "Wijzig je profiel", edit_user_profile_path(user_id: current_user.id), class: 'btn btn-default btn-lg btn-block' %>
+            <%= link_to "Bekijk je profiel", user_path(current_user.id), class: 'btn btn-default btn-lg btn-block' %>
           <% else %>
             <p class="text-center">Create your profile so that you can share your information with the community.</p>
             <%= link_to "Create your profile", new_user_profile_path(user_id: current_user.id), class: 'btn btn-default btn-lg btn-block' %>
@@ -19,9 +19,9 @@
       </div>
       <div class="col-md-6">
         <div class="well">
-          <h2 class="text-center">The community</h2>
-          <p class="text-center">Visit the community to meet other developers, entrepreneurs and investors!</p>
-          <%= link_to "Visit the community!", users_path, class: 'btn btn-default btn-lg btn-block' %>
+          <h2 class="text-center">De community</h2>
+          <p class="text-center">Bekijk hier de community om in contact te komen met nep profielen!</p>
+          <%= link_to "Bekijk de community!", users_path, class: 'btn btn-default btn-lg btn-block' %>
         </div>
       </div>
     <% else %>
@@ -29,14 +29,14 @@
         <div class="well">
           <h2 class="text-center">Basic membership</h2>
           <br>
-          <h4 class="text-center">Sign up for free and get basic access to the community.</h4>
+          <h4 class="text-center">Schrijf je gratis in om de basic versie van de community te zien!</h4>
           <%= link_to "Sign up with Basic", new_user_registration_path(plan: @basic_plan), class: 'btn btn-primary btn-lg btn-block' %>
         </div>
       </div>
       <div class="col-md-6">
         <div class="well">
           <h2 class="text-center">Pro membership</h2>
-          <h4 class="text-center">Sign up for the pro account for €10/month and get access to the community and contact information!</h4>
+          <h4 class="text-center">Maaaar, je kan je ook inschrijven met een Pro membership en iets meer info van de nep profielen te zien krijgen. Daarnaast sponsor je me €10 per maand.</h4>
           <%= link_to "Sign up with Pro", new_user_registration_path(plan: @pro_plan), class: 'btn btn-success btn-lg btn-block' %>
         </div>
       </div>
